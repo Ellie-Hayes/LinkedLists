@@ -17,7 +17,7 @@ public:
 	void InsertAfter(ListNode* lastNode, int d);
 	void DeleteList(ListNode** node);
 	void DeleteAfter(ListNode* node);
-	void DeleteAt(ListNode* node, int pos);
+	void DeleteAt(ListNode** node, int pos);
 	void PrintList(ListNode* node);
 	
 private:

@@ -125,32 +125,41 @@ void ListLinked::DeleteAfter(ListNode* node)
 	}
 }
 
-void ListLinked::DeleteAt(ListNode* node, int pos)
+void ListLinked::DeleteAt(ListNode** node, int pos)
 {
 	int count = 0; 
-	ListNode* pTemp; 
+	ListNode* pTemp = *node;
+	ListNode* nextNode = pTemp;
 
 	while (node != nullptr)
 	{
-		pTemp = node;
 
 		if (count == pos && pos != 0)
 		{
 			std::cout << "Deleted node at position: " << pos << std::endl;
-			pTemp->next = node->next; 
-			pTemp = node; delete pTemp;
+			pTemp->next = nextNode->next; 
+			pTemp = nextNode; delete pTemp;
+				
+			return;
+			
 
 		}
 		else if (count == pos && pos == 0)
 		{
-			std::cout << "Deleted head " << std::endl;
-			head = node->next; 
-			pTemp = node; delete pTemp; 
+			/*std::cout << "Deleted head " << std::endl;
+			*head = *nextNode->next;
+			pTemp = nextNode;
+			delete pTemp; */
+			return;
 		}
+		
+
+		if (count != 0) { pTemp = pTemp->next; }
+		
+		std::cout << "Ptemo data = " << pTemp->data << std::endl;
 
 		count++;
-		node = node->next;
-		
+		nextNode = nextNode->next;
 
 	}
 

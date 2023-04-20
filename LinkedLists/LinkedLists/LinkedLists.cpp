@@ -13,13 +13,16 @@ int main()
     lists->MakeNode(&head, 5);
     lists->MakeNode(&head, 2);
     lists->MakeNode(&head, 10);
-    //lists->DeleteAt(head, 0);
+    lists->DeleteAt(&head, 1);
+
+    lists->PrintList(head);
+
     lists->InsertFirst(&head, 7);
     lists->InsertAfter(head->next, 40);
 
     lists->PrintList(head);
 
-   // lists->DeleteAfter(head->next)
+    //lists->DeleteAfter(head->next)
     
     lists->Find(head, 10);
     lists->GetNode(head, 2);
